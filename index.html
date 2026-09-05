@@ -337,7 +337,7 @@
 
 <!-- NAV -->
 <header id="header">
-  <a href="#top" class="logo">BLUES</a>
+  <a href="#top" class="logo" id="logoHome">BLUES</a>
   <nav class="nav-links">
     <a href="#edit">Shop</a>
     <a href="#collection">Collection</a>
@@ -619,6 +619,16 @@ function openPDP(p){
 document.getElementById('pdpBack').addEventListener('click', ()=>{
   pdp.classList.remove('open');
   document.body.style.overflow='';
+  document.getElementById('edit').scrollIntoView({behavior:'smooth'});
+});
+
+document.getElementById('logoHome').addEventListener('click', (e)=>{
+  e.preventDefault();
+  pdp.classList.remove('open');
+  document.body.style.overflow='';
+  mobileMenu.classList.remove('open');
+  closeCart();
+  document.getElementById('top').scrollIntoView({behavior:'smooth'});
 });
 
 document.querySelectorAll('#pdpSizes button').forEach(btn=>{
